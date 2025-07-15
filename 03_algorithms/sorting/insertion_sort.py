@@ -23,8 +23,6 @@ def insertion_sort(unsorted_list):
 
     return unsorted_list
 
-# print(insertion_sort([8, 4, 1, 5, 9, 6]))
-
 # 10 unique numbers from 1 to 99
 random_list = random.sample(range(1, 100), 10)
 

@@ -1,3 +1,5 @@
+import random
+
 def quick_sort(values):
     # If the list has 1 or no elements, it's already sorted
     if len(values) <= 1:
@@ -13,17 +15,22 @@ def quick_sort(values):
     # right part: numbers greater than pivot
     right = []
 
-    for number in values[1:]:  # start from index to skip the pivot
+    # start from index to skip the pivot
+    for number in values[1:]:  
         if number <= pivot:
             left.append(number)
         else:
             right.append(number)
+            
+    # print(f"Left {left}")
+    # print(f"Right {right}")
 
     # Recursively sort both parts and put them together
     return quick_sort(left) + [pivot] + quick_sort(right)
 
-# function call
-list_values = [33, 3, 10, 55, 26, 64, 12, 5]
-print("Before sorting:", list_values)
-sorted_list = quick_sort(list_values)
-print("Sorted List:", sorted_list)
+# 10 unique numbers from 1 to 99
+random_list = random.sample(range(1, 100), 3)
+
+print("Unsorted list:", random_list)
+sorted_list = quick_sort(random_list.copy())
+print("Sorted list:", sorted_list)

@@ -1,3 +1,5 @@
+import random
+
 def bubble_sort(unsorted_list):
     number_of_elements = len(unsorted_list)
     
@@ -17,12 +19,12 @@ def bubble_sort(unsorted_list):
             # print(f"Innerloop {unsorted_list}")
             
         # inside outer loop
-        print(f"Outerloop {unsorted_list}")
+        # print(f"Outerloop {unsorted_list}")
     return unsorted_list
 
-values = [9,8,7,6,5,4,3,2,1]
-print(f"Before sorting {values}")
+# 10 unique numbers from 1 to 99
+random_list = random.sample(range(1, 100), 10)
+print("Unsorted list:", random_list)
 
-
-sorted_values = bubble_sort(values)
-print(f"Before sorting {sorted_values}")
+sorted_list = bubble_sort(random_list.copy())
+print("Sorted list:", sorted_list)

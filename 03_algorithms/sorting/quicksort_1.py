@@ -1,3 +1,5 @@
+import random
+
 def quick_sort(values):
     if len(values) <= 1:
         return values
@@ -10,6 +12,10 @@ def quick_sort(values):
 
     return quick_sort(left) + [pivot] + quick_sort(right)
 
-list_values = [33, 10, 55, 26, 64, 12, 5]
-sorted_list = quick_sort(list_values)
-print("Sorted array:", sorted_list)
+
+# 10 unique numbers from 1 to 99
+random_list = random.sample(range(1, 100), 10)
+
+print("Unsorted list:", random_list)
+sorted_list = quick_sort(random_list.copy())
+print("Sorted list:", sorted_list)
